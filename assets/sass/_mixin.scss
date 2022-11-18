@@ -1,0 +1,233 @@
+// for colors
+@mixin color($color) {
+  color: map-get($map: $colors, $key: $color);
+}
+
+// for wrapper
+@mixin wrapper($className:null, $width:null) {
+  $class: wrapper;
+
+  @if $className {
+    $class : #{$className}-wrapper;
+  }
+
+  .#{$class} {
+    width: $width;
+    margin: $autoMargin;
+  }
+}
+
+// for social icons
+@mixin icon($content, $textIndent:null) {
+  font-family: 'FontAwesome';
+  font-weight: 900;
+
+  @if $textIndent {
+    float: left;
+    text-indent: 0;
+  }
+
+  content: $content;
+}
+
+// for flex
+@mixin flex($flex:null, $basis:null, $justify:null, $align:null, $direction:null, $wrap:null, $flexOrder:null) {
+  @if $flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  @if $align {
+    -webkit-box-align: $align;
+    -moz-box-align: $align;
+    -ms-flex-align: $align;
+    -webkit-align-items: $align;
+    align-items: $align;
+  }
+
+  @if $basis {
+    -ms-flex-preferred-size: $basis;
+    flex-basis: $basis;
+  }
+
+  @if $direction {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    -o-flex-direction: $direction;
+
+    @if $direction==row {
+      -webkit-box-orient: horizontal;
+    }
+
+    @else {
+      -webkit-box-orient: vertical;
+    }
+
+    flex-direction: $direction;
+  }
+
+  @if $wrap {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    -o-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+  }
+
+  @if $justify {
+    -webkit-justify-content: $justify;
+    -ms-flex-pack: $justify;
+    justify-content: $justify;
+  }
+
+  @if $flexOrder {
+    -webkit-box-ordinal-group: $flexOrder;
+    -moz-box-ordinal-group: $flexOrder;
+    -ms-flex-order: $flexOrder;
+    -webkit-order: $flexOrder;
+    order: $flexOrder;
+  }
+}
+
+// for image
+@mixin img($objectFit) {
+  img {
+    width: 100%;
+    height: auto;
+    -o-object-fit: $objectFit;
+    object-fit: $objectFit;
+    -o-object-position: center;
+    object-position: center;
+  }
+}
+
+// for any content width or height
+@mixin content-size($width:null, $height:null) {
+  @if $width {
+    width: $width;
+  }
+
+  @if $height {
+    height: $height;
+  }
+}
+
+// if use display property except flex
+@mixin display($display:null, $float:null, $overflow:null, $zIndex:null) {
+  @if $display {
+    display: $display;
+  }
+
+  @if $float {
+    float: $float;
+  }
+
+  @if $zIndex {
+    z-index: $zIndex;
+  }
+
+  @if $overflow {
+    overflow: $overflow;
+  }
+}
+
+// position style mixin
+@mixin position($position, $top:null, $right:null, $bottom:null, $left:null) {
+  position: $position;
+
+  @if $position {
+    @if $top {
+      top: $top;
+    }
+
+    @if $right {
+      right: $right;
+    }
+
+    @if $bottom {
+      bottom: $bottom;
+    }
+
+    @if $left {
+      left: $left;
+    }
+  }
+}
+
+// font mixin
+@mixin font($family:null, $size:null, $weight:null, $text:null, $textAlign:null) {
+
+  @if $family {
+    font-family: $family;
+  }
+
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $textAlign {
+    text-align: $textAlign;
+  }
+
+  @if $text {
+    text-transform: $text;
+  }
+}
+
+// transform mixin
+@mixin tranform($value:null) {
+  -webkit-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+// transition mixin
+@mixin transition($property:null, $delay:null, $func:null) {
+  -webkit-transition: $property $delay $func;
+  -moz-transition: $property $delay $func;
+  -ms-transition: $property $delay $func;
+  -o-transition: $property $delay $func;
+  transition: $property $delay $func;
+}
+
+// background mixin
+@mixin background($backgroundColor:null, $url:null, $backgroundValue:null) {
+
+  @if $url {
+    background: $backgroundColor url($url) $backgroundValue;
+    background-size: cover;
+  }
+
+  @else {
+    background: $backgroundColor;
+  }
+}
+
+// media query mixin
+@mixin breakpoint($min:null, $max:null) {
+  @if min and max {
+    @media screen and (min-device-width: $min) and (max-device-width: $max) {
+      @content;
+    }
+  }
+}
+
+@mixin maxResponsive($device) {
+  @media only screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin minResponsive($device) {
+  @media only screen and (min-width: $device) {
+    @content;
+  }
+}
