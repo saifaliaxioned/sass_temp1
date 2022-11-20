@@ -1,5 +1,58 @@
 header {
+  max-height: 700px;
+  height: 96vh;
+  background: black;
   .wrapper {
-    @include flex(flex);
+    padding: 40px 0 22px;
+    border-bottom: 2px solid white;
+    @include flex(flex,$justify:space-between);
+  }
+  @at-root {
+    .header-content {
+      @include flex(flex,$gap:20px,$align:center);
+    }
+
+    .logo {
+      a {
+        @include color("white");
+        @include font($size:44px,$weight:bold, $text:capitalize);
+      }
+    }
+
+    .hamburger {
+      @include display(none);
+    }
+
+    .nav-items {
+      @include flex(flex);
+
+      li {
+        padding: 0 30px;
+      }
+      
+      a {
+        @include position($position:relative);
+        @include color("white");
+        @include font($size:16px, $weight:bold, $text:capitalize);
+      }
+    }
+    .down-icon::after {
+      @include icon('\f078',$position:absolute,$top:50%,$right:-16px,$size:7px);
+      @include transform(translateY(-50%));
+    }
+
+    .cart-search {
+      @include flex(flex,$align:flex-end,$gap:15px);
+      a {
+        text-indent: -9999px;
+        &::before {
+          @include icon($color:"white",$textIndent:true);
+        }
+      }
+      li:first-child a::before {
+        @include font($size:30px);
+      }
+    }
+    @include onlyIcon($headerIcon);
   }
 }
