@@ -157,7 +157,7 @@
 }
 
 // position style mixin
-@mixin position($position, $zIndex:null, $top:null, $right:null, $bottom:null, $left:null) {
+@mixin position($position:null, $zIndex:null, $top:null, $right:null, $bottom:null, $left:null) {
   position: $position;
   z-index: $zIndex;
   top: $top;

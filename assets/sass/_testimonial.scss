@@ -73,5 +73,37 @@
         }
       }
     }
+
+    @include maxResponsive("tablet") {
+      .feedback {
+        @include flex($direction:column-reverse,$gap:15px);
+
+        p {
+          padding-left: 0;
+          @include font($size:20px,$textAlign:center)
+        }
+      }
+      .user {
+        figure {
+          width: 30%;
+        }
+      }
+      .control-btns {
+        width: 96%;
+        padding: 0 2%;
+        @include flex($justify:space-between);
+        @include position($bottom:40%,$left:0);
+        @include transform(translateY(-50%));
+      }
+    }
+
+    @include maxResponsive("mediumPhone") {
+      .feedback {
+        p {
+          @include font($size:15px);
+          line-height: 1.4;
+        }
+      }
+    }
   }
 }

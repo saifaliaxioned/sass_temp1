@@ -77,8 +77,10 @@
       }
     }
     @include maxResponsive("largePhone") {
-      li {
-        @include flex($basis: 70%);
+      .design-items {
+        li {
+          @include flex($basis: 70%);
+        }
       }
     }
   }

@@ -475,6 +475,17 @@ header .wrapper {
   box-shadow: 5px 5px 0 #A3B1B7;
 }
 
+@media only screen and (max-width: 640px) {
+  .gallery {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+  }
+}
+
 .testimonial {
   padding-top: 50px;
   position: relative;
@@ -592,6 +603,44 @@ header .wrapper {
 
 .active-dot {
   background: #F58181;
+}
+
+@media only screen and (max-width: 995px) {
+  .feedback {
+    gap: 15px;
+    -webkit-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    -o-flex-direction: column-reverse;
+    -webkit-box-orient: vertical;
+    flex-direction: column-reverse;
+  }
+  .feedback p {
+    padding-left: 0;
+    font-size: 20px;
+    text-align: center;
+  }
+  .user figure {
+    width: 30%;
+  }
+  .control-btns {
+    width: 96%;
+    padding: 0 2%;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+    bottom: 40%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+@media only screen and (max-width: 480px) {
+  .feedback p {
+    font-size: 15px;
+    line-height: 1.4;
+  }
 }
 
 .authors {
@@ -748,8 +797,8 @@ header .wrapper {
     flex-basis: 40%;
   }
 }
-@media only screen and (max-width: 540px) {
-  li {
+@media only screen and (max-width: 640px) {
+  .design-items li {
     -ms-flex-preferred-size: 70%;
     flex-basis: 70%;
   }
