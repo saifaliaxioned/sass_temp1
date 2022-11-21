@@ -22,5 +22,11 @@
         @include color("white");
       }
     }
+
+    @include maxResponsive("desktop") {
+      .author-items {
+        @include flex($wrap:wrap,$justify:center);
+      }
+    }
   }
 }
