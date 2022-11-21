@@ -26,6 +26,33 @@
         width: 68%;
       }
     }
+
+    @include maxResponsive("ipad") {
+      .top-items {
+        @include flex($wrap:wrap,$gap:32px);
+
+        li:first-child {
+          @include flex($basis:100%);
+        }
+
+        li {
+          @include flex($basis:47%);
+        }
+      }
+    }
+
+    @include maxResponsive("largePhone") {
+      .top-items {
+        li {
+          @include flex($basis:100%);
+          @include font($textAlign:center);
+        }
+        figure {
+          width: 50%;
+          margin: 0 auto;
+        }
+      }
+    }
   }
 }
 
@@ -59,6 +86,14 @@
         padding: 0 6px;
         @include color("white");
         @include font($size:13px)
+      }
+    }
+
+    @include maxResponsive("mediumPhone") {
+      .footer-bottom {
+        .wrapper {
+          @include flex($direction:column,$align:center,$gap:8px)
+        }
       }
     }
   }

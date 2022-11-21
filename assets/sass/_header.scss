@@ -139,7 +139,30 @@ header {
       .hamburger:hover + nav {
         left: 0;
       }
-    
+    }
+
+    @include maxResponsive("largePhone") {
+      & {
+        height: 50vh;
+
+        .wrapper {
+          padding: 0;
+        }
+      }
+      .cart-search li:first-child a::before {
+        @include font($size:20px);
+      }
+
+      .logo {
+        align-self: center;
+        a {
+          @include font($size:26px);
+        }
+      }
+
+      .header-content {
+        @include flex($gap:5px);
+      }
     }
   }
 }
