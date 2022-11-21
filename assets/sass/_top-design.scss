@@ -76,10 +76,22 @@
         }
       }
     }
+    @include maxResponsive("ipad") {
+      .design-items {
+        padding: 48px 0;
+      }
+    }
     @include maxResponsive("largePhone") {
       .design-items {
         li {
           @include flex($basis: 70%);
+        }
+      }
+    }
+    @include maxResponsive("mediumPhone") {
+      .design-items {
+        li {
+          @include flex($basis: 85%);
         }
       }
     }

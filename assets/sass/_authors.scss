@@ -28,5 +28,15 @@
         @include flex($wrap:wrap,$justify:center);
       }
     }
+
+    @include maxResponsive("ipad") {
+      & {
+        padding: 30px 0;
+      }
+
+      .author-items {
+        padding-top: 30px;
+      }
+    }
   }
 }

@@ -1,6 +1,19 @@
 .section-heading {
-    @include font($size:50px,$weight:bold,$text:capitalize,$textAlign:center);
-    font-style: italic;
+  @include font($size:50px,$weight:bold,$text:capitalize,$textAlign:center);
+  font-style: italic;
+
+  @at-root {
+    @include maxResponsive("largePhone") {
+      & {
+        @include font($size:37px);
+      }
+    }
+    @include maxResponsive("smallPhone") {
+      & {
+        @include font($size:25px);
+      }
+    }
+  }
 }
 
 .new-designs{
@@ -24,6 +37,16 @@
     @include maxResponsive("largePhone") {
       .gallery{
         @include flex($direction:column);
+      }
+    }
+
+    @include maxResponsive("ipad") {
+      & {
+        padding: 38px 0;
+      }
+
+      .gallery {
+        padding: 30px 0 10px;
       }
     }
   }
