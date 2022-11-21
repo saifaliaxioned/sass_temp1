@@ -2,6 +2,9 @@
   @include background("light-black");
   @include color("white");
 
+  .wrapper {
+    @include flex(flex,$direction:column);
+  }
   @at-root {
     .feedback {
       @include flex(flex);
