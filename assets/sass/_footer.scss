@@ -1,0 +1,53 @@
+.footer-top {
+  padding: 67px 0 80px;
+  @include background("light-black");
+  @include color("white");
+  
+  @at-root {
+    .top-items {
+      padding-bottom: 50px;
+      @include flex(flex,$gap:10px);
+
+      li {
+        @include flex($basis:33%);
+      }
+
+      h3 {
+        padding-bottom: 20px;
+        @include font($size: 16px, $weight: bold, $text: uppercase);
+      }
+
+      p {
+        width: 75%;
+        @include font($size:14px);
+        line-height: 1.5;
+      }
+
+      figure {
+        width: 60%;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  padding: 10px 0;
+  @include background("black");
+  .wrapper {
+    @include flex(flex,$justify:space-between);
+  }
+  @at-root {
+    .social-items {
+      @include flex(flex,$gap:10px);
+
+      a {
+        text-indent: -9999px;
+
+        &::before {
+          @include icon($color:"icon-color",$textIndent:true);
+        }
+      }
+    }
+    @include onlyIcon($fontAwesome);
+  }
+}

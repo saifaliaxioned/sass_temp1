@@ -576,4 +576,85 @@ header .wrapper {
   text-transform: uppercase;
 }
 
+.footer-top {
+  padding: 67px 0 80px;
+  background: #1C1C1C;
+  color: #fff;
+}
+.top-items {
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: 10px;
+}
+.top-items li {
+  -ms-flex-preferred-size: 33%;
+  flex-basis: 33%;
+}
+.top-items h3 {
+  padding-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.top-items p {
+  width: 75%;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.top-items figure {
+  width: 60%;
+}
+
+.footer-bottom {
+  padding: 10px 0;
+  background: #000;
+}
+.footer-bottom .wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+}
+.social-items {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: 10px;
+}
+.social-items a {
+  text-indent: -9999px;
+}
+.social-items a::before {
+  color: #B4C3CA;
+  font-family: "FontAwesome";
+  float: left;
+  text-indent: 0;
+}
+
+.facebook::before {
+  content: "\f39e ";
+}
+
+.twitter::before {
+  content: "\f099";
+}
+
+.vimeo::before {
+  content: "\f40a";
+}
+
+.instagram::before {
+  content: "\e055";
+}
+
 /*# sourceMappingURL=style.css.map */
