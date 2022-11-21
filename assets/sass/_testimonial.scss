@@ -49,9 +49,9 @@
           a {
             text-indent: -9999px;
             &::before {
-              padding: 6px 9px;
+              padding: 9px;
               border: 1px solid #f58181;
-              @include icon($color: "light-pink", $textIndent: true);
+              @include icon($color: "light-pink",$size:10px, $textIndent: true);
             }
           }
           @include onlyIcon($testimonialIcon);

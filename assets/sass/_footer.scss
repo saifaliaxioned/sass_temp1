@@ -5,8 +5,8 @@
   
   @at-root {
     .top-items {
-      padding-bottom: 50px;
-      @include flex(flex,$gap:10px);
+      padding-bottom: 40px;
+      @include flex(flex,$gap:0 80px);
 
       li {
         @include flex($basis:33%);
@@ -18,36 +18,48 @@
       }
 
       p {
-        width: 75%;
         @include font($size:14px);
         line-height: 1.5;
       }
 
       figure {
-        width: 60%;
+        width: 68%;
       }
     }
   }
 }
 
 .footer-bottom {
-  padding: 10px 0;
+  padding: 5px 0;
   @include background("black");
   .wrapper {
     @include flex(flex,$justify:space-between);
   }
   @at-root {
     .social-items {
-      @include flex(flex,$gap:10px);
+      @include flex(flex,$gap:20px);
 
       a {
         text-indent: -9999px;
 
         &::before {
-          @include icon($color:"icon-color",$textIndent:true);
+          @include icon($color:"icon-color",$size:19px,$textIndent:true);
         }
       }
     }
     @include onlyIcon($fontAwesome);
+
+    .term-items {
+      @include flex(flex,$align:flex-end);
+
+      li:nth-child(2) a {
+        border-left: 1px solid #fff;
+      }
+      a {
+        padding: 0 6px;
+        @include color("white");
+        @include font($size:13px)
+      }
+    }
   }
 }

@@ -430,10 +430,11 @@ header .wrapper {
   text-indent: -9999px;
 }
 .control-btns a::before {
-  padding: 6px 9px;
+  padding: 9px;
   border: 1px solid #f58181;
   color: #F58181;
   font-family: "FontAwesome";
+  font-size: 10px;
   float: left;
   text-indent: 0;
 }
@@ -582,13 +583,13 @@ header .wrapper {
   color: #fff;
 }
 .top-items {
-  padding-bottom: 50px;
+  padding-bottom: 40px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  gap: 10px;
+  gap: 0 80px;
 }
 .top-items li {
   -ms-flex-preferred-size: 33%;
@@ -601,16 +602,15 @@ header .wrapper {
   text-transform: uppercase;
 }
 .top-items p {
-  width: 75%;
   font-size: 14px;
   line-height: 1.5;
 }
 .top-items figure {
-  width: 60%;
+  width: 68%;
 }
 
 .footer-bottom {
-  padding: 10px 0;
+  padding: 5px 0;
   background: #000;
 }
 .footer-bottom .wrapper {
@@ -629,7 +629,7 @@ header .wrapper {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 .social-items a {
   text-indent: -9999px;
@@ -637,12 +637,13 @@ header .wrapper {
 .social-items a::before {
   color: #B4C3CA;
   font-family: "FontAwesome";
+  font-size: 19px;
   float: left;
   text-indent: 0;
 }
 
 .facebook::before {
-  content: "\f39e ";
+  content: "\f39e";
 }
 
 .twitter::before {
@@ -655,6 +656,27 @@ header .wrapper {
 
 .instagram::before {
   content: "\e055";
+}
+
+.term-items {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: flex-end;
+  -moz-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+.term-items li:nth-child(2) a {
+  border-left: 1px solid #fff;
+}
+.term-items a {
+  padding: 0 6px;
+  color: #fff;
+  font-size: 13px;
 }
 
 /*# sourceMappingURL=style.css.map */
