@@ -1,14 +1,15 @@
 header {
   max-height: 700px;
-  height: 96vh;
+  height: 92vh;
   background: black;
   .wrapper {
-    padding: 40px 0 22px;
+    padding: 30px 0 22px;
     border-bottom: 2px solid white;
     @include flex(flex,$justify:space-between);
   }
   @at-root {
     .header-content {
+      padding-right: 1.5%;
       @include flex(flex,$gap:20px,$align:center);
     }
 
@@ -27,7 +28,7 @@ header {
       @include flex(flex);
 
       li {
-        padding: 0 30px;
+        padding: 0 25px;
       }
       
       a {
