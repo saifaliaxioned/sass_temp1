@@ -1,27 +1,73 @@
 header {
   max-height: 700px;
   height: 92vh;
-  background: black;
+  @include background("black");
   .wrapper {
     padding: 30px 0 22px;
     border-bottom: 2px solid white;
-    @include flex(flex,$justify:space-between);
+    @include flex(flex, $justify: space-between);
   }
   @at-root {
     .header-content {
       padding-right: 1.5%;
-      @include flex(flex,$gap:20px,$align:center);
+      @include flex(flex, $gap: 20px, $align: center);
     }
 
     .logo {
       a {
         @include color("white");
-        @include font($size:44px,$weight:bold, $text:capitalize);
+        @include font($size: 44px, $weight: bold, $text: capitalize);
       }
     }
 
     .hamburger {
+      width: 41px;
+      height: 35px;
+      border-radius: 2px;
       @include display(none);
+      @include position($position: relative);
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 50%;
+      height: 3px;
+      border-radius: 4px;
+      @include display(inline-block);
+      @include position($position: absolute, $top: 50%, $left: 50%);
+      @include background("white");
+      text-indent: -99999px;
+      @include transition(all 0.3s ease);
+      @include transform(translate(-50%, -50%));
+    }
+
+    .bar::before,
+    .bar::after {
+      content: "";
+      width: 100%;
+      height: inherit;
+      @include position($position:absolute,$left:0);
+      background-color: inherit;
+      @include transition(all 0.3s ease);
+    }
+
+    .bar::before {
+      top: -8px;
+    }
+    .bar::after {
+      top: 8px;
+    }
+
+    .hamburger:hover .bar {
+      @include transform(translate(-50%, -50%) rotate(45deg));
+    }
+
+    .hamburger:hover .bar::before {
+     @include transform(translateY(8px) rotate(0));
+    }
+
+    .hamburger:hover .bar::after {
+      @include transform(translateY(-8px) rotate(-90deg));
     }
 
     .nav-items {
@@ -30,30 +76,70 @@ header {
       li {
         padding: 0 25px;
       }
-      
+
       a {
-        @include position($position:relative);
+        @include position($position: relative);
         @include color("white");
-        @include font($size:16px, $weight:bold, $text:capitalize);
+        @include font($size: 16px, $weight: bold, $text: capitalize);
+        @include transition(all .3s ease);
+
+        @include minResponsive("tablet") {
+          &:hover {
+            @include color("light-pink");
+          }
+        }
       }
     }
     .down-icon::after {
-      @include icon('\f078',$position:absolute,$top:50%,$right:-16px,$size:7px);
+      @include icon(
+        "\f078",
+        $position: absolute,
+        $top: 50%,
+        $right: -16px,
+        $size: 7px
+      );
       @include transform(translateY(-50%));
     }
 
     .cart-search {
-      @include flex(flex,$align:flex-end,$gap:15px);
+      @include flex(flex, $align: flex-end, $gap: 15px);
       a {
         text-indent: -9999px;
         &::before {
-          @include icon($color:"white",$textIndent:true);
+          @include icon($color: "white", $textIndent: true);
         }
       }
       li:first-child a::before {
-        @include font($size:30px);
+        @include font($size: 30px);
       }
     }
     @include onlyIcon($headerIcon);
+
+
+    @include maxResponsive("ipad") {
+      .hamburger {
+        padding: 5px;
+        @include display(block);
+        z-index: 3;
+      }
+    
+      nav {
+        width: 100%;
+        height: 100vh;
+        @include flex(flex,$align:center,$justify:center);
+        @include position($position:fixed,$zIndex:1,$top:0,$left:-100%);
+        @include background("black");
+        @include transition(all .5s ease);
+      }
+      
+      .nav-items {
+        @include flex($direction:column,$gap:40px,$align:center);
+      }
+    
+      .hamburger:hover + nav {
+        left: 0;
+      }
+    
+    }
   }
 }

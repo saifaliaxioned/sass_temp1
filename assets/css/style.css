@@ -202,7 +202,7 @@ li {
 header {
   max-height: 700px;
   height: 92vh;
-  background: black;
+  background: #000;
 }
 header .wrapper {
   padding: 30px 0 22px;
@@ -239,7 +239,73 @@ header .wrapper {
 }
 
 .hamburger {
+  width: 41px;
+  height: 35px;
+  border-radius: 2px;
   display: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.bar {
+  width: 50%;
+  height: 3px;
+  border-radius: 4px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  text-indent: -99999px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.bar::before,
+.bar::after {
+  content: "";
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  left: 0;
+  background-color: inherit;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.bar::before {
+  top: -8px;
+}
+
+.bar::after {
+  top: 8px;
+}
+
+.hamburger:hover .bar {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hamburger:hover .bar::before {
+  -webkit-transform: translateY(8px) rotate(0);
+  -ms-transform: translateY(8px) rotate(0);
+  transform: translateY(8px) rotate(0);
+}
+
+.hamburger:hover .bar::after {
+  -webkit-transform: translateY(-8px) rotate(-90deg);
+  -ms-transform: translateY(-8px) rotate(-90deg);
+  transform: translateY(-8px) rotate(-90deg);
 }
 
 .nav-items {
@@ -258,6 +324,16 @@ header .wrapper {
   font-size: 16px;
   font-weight: bold;
   text-transform: capitalize;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+@media only screen and (min-width: 995px) {
+  .nav-items a:hover {
+    color: #F58181;
+  }
 }
 
 .down-icon::after {
@@ -304,6 +380,58 @@ header .wrapper {
 
 .search::before {
   content: "\f002";
+}
+
+@media only screen and (max-width: 768px) {
+  .hamburger {
+    padding: 5px;
+    display: block;
+    z-index: 3;
+  }
+  nav {
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -100%;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .nav-items {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    gap: 40px;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+  }
+  .hamburger:hover + nav {
+    left: 0;
+  }
 }
 
 .section-heading {
