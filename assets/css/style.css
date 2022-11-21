@@ -318,7 +318,7 @@ header .wrapper {
   background: #B5C5CB;
 }
 .gallery {
-  padding: 50px 0 86px;
+  padding: 50px 0 83px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -347,10 +347,13 @@ header .wrapper {
 }
 
 .testimonial {
+  padding-top: 50px;
+  position: relative;
   background: #1C1C1C;
   color: #fff;
 }
 .testimonial .wrapper {
+  width: 84%;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -364,11 +367,101 @@ header .wrapper {
   flex-direction: column;
 }
 .feedback {
+  padding: 20px 0 32px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  gap: 50px;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+}
+.feedback p {
+  padding-left: 8.5%;
+  font-size: 30px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.user {
+  text-align: center;
+}
+.user figure {
+  width: 78%;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user h3 {
+  padding: 16px 0 6px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.user span {
+  color: #F58181;
+}
+
+.controls {
+  padding-bottom: 43px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.control-btns {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  bottom: 12%;
+  left: 14.7%;
+}
+.control-btns a {
+  text-indent: -9999px;
+}
+.control-btns a::before {
+  padding: 6px 9px;
+  border: 1px solid #f58181;
+  color: #F58181;
+  font-family: "FontAwesome";
+  float: left;
+  text-indent: 0;
+}
+.control-btns .prev::before {
+  content: "\f100";
+}
+.control-btns .next::before {
+  content: "\f101";
+}
+
+.dots {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: 10px;
+}
+.dots span {
+  width: 8px;
+  height: 8px;
+  border: 1px solid #F58181;
+  border-radius: 50%;
+  display: block;
+  text-indent: -9999px;
+}
+
+.active-dot {
+  background: #F58181;
 }
 
 /*# sourceMappingURL=style.css.map */

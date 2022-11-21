@@ -1,13 +1,77 @@
 .testimonial {
+  padding-top: 50px;
+  @include position($position: relative);
   @include background("light-black");
   @include color("white");
 
   .wrapper {
-    @include flex(flex,$direction:column);
+    width: 84%;
+    @include flex(flex, $direction: column);
   }
   @at-root {
     .feedback {
-      @include flex(flex);
+      padding: 20px 0 32px;
+      @include flex(flex, $justify: space-between, $gap: 50px);
+
+      p {
+        padding-left: 8.5%;
+        @include font($size: 30px);
+        font-style: italic;
+        line-height: 1.6;
+      }
+    }
+    .user {
+      @include font($textAlign: center);
+      figure {
+        width: 78%;
+        margin: 0 auto;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      h3 {
+        padding: 16px 0 6px;
+        @include font($size: 20px, $text: capitalize);
+      }
+
+      span {
+        @include color("light-pink");
+      }
+    }
+    .controls {
+      padding-bottom: 43px;
+      @include flex(flex, $justify: center);
+
+      @at-root {
+        .control-btns {
+          @include flex(flex, $gap: 10px);
+          @include position($position: absolute, $bottom: 12%, $left: 14.7%);
+          a {
+            text-indent: -9999px;
+            &::before {
+              padding: 6px 9px;
+              border: 1px solid #f58181;
+              @include icon($color: "light-pink", $textIndent: true);
+            }
+          }
+          @include onlyIcon($testimonialIcon);
+        }
+        .dots {
+          @include flex(flex,$gap:10px);
+
+          span {
+            width: 8px;
+            height: 8px;
+            border: 1px solid #F58181;
+            border-radius: 50%;
+            @include display(block);
+            text-indent: -9999px;
+          }
+        }
+        .active-dot {
+          @include background("light-pink");
+        }
+      }
     }
   }
 }
