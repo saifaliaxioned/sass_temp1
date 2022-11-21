@@ -494,4 +494,86 @@ header .wrapper {
   color: #fff;
 }
 
+.top-designs {
+  padding: 35px 0 53px;
+  background: #B5C5CB;
+}
+.design-items {
+  padding: 90px 0;
+  margin-left: 0.5%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: 30px;
+}
+.design-items li {
+  position: relative;
+  box-shadow: 6px 7px 0 #a3b1b7;
+}
+
+.design-details {
+  padding: 20px 5% 30px;
+  background: #fff;
+}
+.design-details h4 {
+  padding-bottom: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.design-details span {
+  color: #F58181;
+  font-weight: bold;
+}
+.design-details .cancel-text {
+  color: #6799B8;
+  font-size: 15px;
+  text-decoration: line-through;
+}
+.design-details a {
+  color: #1C1C1C;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.red-badge, .blue-badge {
+  height: 57px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  top: -17px;
+  right: -20px;
+  color: #fff;
+}
+
+.red-badge {
+  width: 58px;
+  background: #F58181;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.blue-badge {
+  width: 34px;
+  padding: 0 11px;
+  background: #6799B8;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /*# sourceMappingURL=style.css.map */

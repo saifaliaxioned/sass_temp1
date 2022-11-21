@@ -1,0 +1,62 @@
+.top-designs {
+  padding: 35px 0 53px;
+  @include background("light-grey");
+
+  @at-root {
+    .design-items {
+      padding: 90px 0;
+      margin-left: .5%;
+      @include flex(flex, $gap: 30px);
+
+      li {
+        @include position($position:relative);
+        box-shadow: 6px 7px 0 #a3b1b7;        
+      }
+    }
+    .design-details {
+      padding: 20px 5% 30px;
+      @include background("white");
+
+      h4 {
+        padding-bottom: 15px;
+        @include font($weight:bold,$text:capitalize)
+      }
+
+      span {
+        @include color("light-pink");
+        @include font($weight:bold);
+      }
+
+      .cancel-text {
+        @include color("light-blue");
+        @include font($size:15px);
+        text-decoration: line-through;
+      }
+
+      a {
+        @include color("light-black");
+        @include font($size:15px,$weight:bold,$text:uppercase)
+      }
+    }
+    .red-badge,.blue-badge {
+      height: 57px;
+      border-radius: 50%;
+      @include flex(flex,$justify:center,$align:center);
+      @include position($position:absolute,$top:-17px,$right:-20px);
+      @include color("white");
+    }
+    
+    .red-badge {
+      width: 58px;
+      @include background("light-pink");
+      @include font($size:15px,$text:uppercase);
+    }
+    
+    .blue-badge {
+      width: 34px;
+      padding: 0 11px;
+      @include background("light-blue");
+      @include font($size:10px,$text:uppercase,$textAlign:center);
+    }
+  }
+}
