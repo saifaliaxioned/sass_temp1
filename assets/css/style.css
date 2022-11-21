@@ -346,4 +346,16 @@ header .wrapper {
   box-shadow: 5px 5px 0 #A3B1B7;
 }
 
+.testimonial {
+  background: #1C1C1C;
+  color: #fff;
+}
+.feedback {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
 /*# sourceMappingURL=style.css.map */

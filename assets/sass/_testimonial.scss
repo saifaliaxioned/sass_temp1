@@ -1,0 +1,10 @@
+.testimonial {
+  @include background("light-black");
+  @include color("white");
+
+  @at-root {
+    .feedback {
+      @include flex(flex);
+    }
+  }
+}
