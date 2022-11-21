@@ -311,6 +311,7 @@ header .wrapper {
   font-weight: bold;
   text-align: center;
   text-transform: capitalize;
+  font-style: italic;
 }
 
 .new-designs {
@@ -462,6 +463,35 @@ header .wrapper {
 
 .active-dot {
   background: #F58181;
+}
+
+.authors {
+  padding: 100px 0;
+  background: #B5C5CB;
+}
+.author-items {
+  padding-top: 88px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: 55px;
+}
+.author-items li {
+  font-size: 15px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.author-items figure {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.author-items h4 {
+  padding: 10px 0 4px;
+}
+.author-items h5 {
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */

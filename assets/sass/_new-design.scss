@@ -1,5 +1,6 @@
 .section-heading {
     @include font($size:50px,$weight:bold,$text:capitalize,$textAlign:center);
+    font-style: italic;
 }
 
 .new-designs{
