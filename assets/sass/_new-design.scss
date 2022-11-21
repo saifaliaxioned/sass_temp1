@@ -1,0 +1,25 @@
+.section-heading {
+    @include font($size:50px,$weight:bold,$text:capitalize,$textAlign:center);
+}
+
+.new-designs{
+  padding: 90px 0;
+  @include background("light-grey");
+
+  @at-root {
+    .gallery {
+      padding: 50px 0 86px;
+      @include flex(flex,$gap:20px);
+    }
+
+    .gallery-one,.gallery-two {
+      @include flex(flex,$direction:column,$gap:18px);
+
+      li {
+        border: 10px solid #fff;
+        box-shadow: 5px 5px 0 #A3B1B7;
+      }
+    }
+
+  }
+}

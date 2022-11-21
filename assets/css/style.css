@@ -306,4 +306,44 @@ header .wrapper {
   content: "\f002";
 }
 
+.section-heading {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.new-designs {
+  padding: 90px 0;
+  background: #B5C5CB;
+}
+.gallery {
+  padding: 50px 0 86px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: 20px;
+}
+
+.gallery-one, .gallery-two {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  gap: 18px;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+}
+.gallery-one li, .gallery-two li {
+  border: 10px solid #fff;
+  box-shadow: 5px 5px 0 #A3B1B7;
+}
+
 /*# sourceMappingURL=style.css.map */
